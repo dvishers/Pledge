@@ -1,51 +1,28 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Pledge — Simple family promises</title>
-  <link rel="stylesheet" href="styles.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promise Tracker</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <main class="container">
-    <header class="header">
-      <h1>Pledge</h1>
-      <p class="subtitle">Make a promise. Put a stake. Keep it between family.</p>
-    </header>
+    <div class="container">
+        <h1>Promise Tracker</h1>
+        <form id="pledge-form">
+            <input type="text" id="commitment" placeholder="Your promise" required>
+            <input type="text" id="amount" placeholder="Penalty amount" required>
+            <input type="text" id="person" placeholder="Recipient phone number" required>
+            <label>
+                <input type="checkbox" id="sendSMS"> Send SMS notification
+            </label>
+            <button type="submit">Add Promise</button>
+        </form>
 
-    <section class="card form-card">
-      <form id="pledge-form" autocomplete="off">
-        <input id="promise" name="promise" placeholder="Promise (e.g. I'll read 30 minutes daily)" required maxlength="120" />
-        <div class="row">
-          <input id="amount" name="amount" placeholder="Amount or stake (e.g. ₹100 or 1 chocolate)" required />
-          <input id="recipient" name="recipient" placeholder="Recipient name or phone (e.g. Mom or +9198...)" required />
-        </div>
-        <div class="row small">
-          <label><input type="checkbox" id="sendSms" /> Send SMS to phone (requires backend)</label>
-        </div>
-        <div class="row actions">
-          <button type="submit" class="btn primary">Make Promise</button>
-          <button type="button" id="exportBtn" class="btn">Export</button>
-          <button type="button" id="importBtn" class="btn">Import</button>
-          <input id="importFile" type="file" accept=".json" style="display:none" />
-        </div>
-      </form>
-    </section>
-
-    <section class="card list-card">
-      <div class="list-header">
         <h2>Your Promises</h2>
-        <div class="meta">Local-only • Use Export to backup</div>
-      </div>
-      <ul id="pledge-list" class="pledge-list"></ul>
-      <p id="empty" class="muted">No promises yet — create one above.</p>
-    </section>
+        <ul id="pledge-list"></ul>
+    </div>
 
-    <footer class="foot muted">
-      Tip: GitHub Pages hosts the frontend. For SMS you need a tiny backend (example included).
-    </footer>
-  </main>
-
-  <script src="app.js?v=3"></script>
+    <script src="app.js?v=3"></script>
 </body>
 </html>
